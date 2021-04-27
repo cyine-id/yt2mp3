@@ -22,7 +22,16 @@ const MainPage = async (req, res) => {
         while ((dt = linkgRex.exec(response.data))) {
             url.push(dt[1]);
         }
-        res.status(200).send(url);
+        if(url.length > 0){
+          res.status(200).send({
+            message: "Success",
+            data: url
+          });
+        }else{
+          res.status(404).send({
+            message: "Not Found"
+          });
+        }
       }else{
         res.status(500).send({
             message: "Internal Server Error"
