@@ -3,7 +3,7 @@ version: '3.9'
 services:
     yt2mp3:
         container_name: yt2mp3
-        image: yt2mp3:0.0.1
+        image: yt2mp3:0.0.3
         build: .
         environment:
             APP_PORT: 2101
